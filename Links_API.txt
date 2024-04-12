@@ -1,1 +1,2 @@
 https://github.com/DenilsonRabelo/API-Receitas
+https://github.com/jreimao/api-culinary-recipes?tab=readme-ov-file

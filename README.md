@@ -1,6 +1,6 @@
 # Projeto de API para o Python
 
-Este é um projeto desenvolvido por Larissa Araújo Gama, Luna Faustino e Murillo Ferreira com o objetivo de desenvolver um sistema python que utiliza de uma API para 🌈
+Este é um projeto desenvolvido por Larissa Araújo Gama, Luna Faustino Lima e Murillo Ferreira com o objetivo de desenvolver um sistema python que utiliza de uma API para 🌈
 
 ## Sobre o Projeto
 
