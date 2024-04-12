@@ -14,4 +14,7 @@ lorem ipsun
 
 Testes de usabilidade são essenciais para garantir que nossas soluções atendam às necessidades da comunidade. Se você é um usuário interessado nesta aplicação sinta-se avontade para utilizar o projeto!😁
 
-
+### Integrantes
+- Larissa Araújo Gama RM-96496
+- Luna Faustino Lima RM-552473
+- Murillo Ferreira RM-553315
