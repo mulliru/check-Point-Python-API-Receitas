@@ -21,7 +21,4 @@ Feedbacks e testes de usabilidade são fundamentais para aprimorar nossas soluç
 - Luna Faustino Lima RM-552473
 - Murillo Ferreira RM-553315
 
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT) - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
