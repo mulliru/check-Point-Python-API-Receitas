@@ -1,20 +1,27 @@
-# Projeto de API para o Python
-Este é um projeto desenvolvido por Larissa Araújo Gama, Luna Faustino e Murillo Ferreira com o objetivo de desenvolver um sistema python que utiliza de uma API para ajudar as pessoas em suas escolhas de receitas🍱 😋
+# Projeto de API para Python
+
+Este é um projeto desenvolvido por Larissa Araújo Gama, Luna Faustino e Murillo Ferreira com o objetivo de criar um sistema em Python que utilize uma API de receitas para ajudar as pessoas a escolherem o prato ideal para o momento. 🍱 😋
 
 ## Sobre o Projeto
 
-lorem ipsun
+O projeto visa simplificar a busca por receitas, fornecendo ao usuário sugestões personalizadas com base em diferentes critérios, como preferências alimentares, ingredientes disponíveis e ocasião.
 
 ### Funcionalidades Propostas
 
-- Desenvolvimento um Sistema capaz de devolver para o usuario a receita ideal para o momento!
-- Desenvolvimento de website que irá estar integrado ao sistema
+- Desenvolvimento de um sistema 🤖capaz de sugerir a receita ideal para o momento atual do usuário.
+- Implementação de um website integrado ao sistema para facilitar o acesso e a interação🖥️ com as funcionalidades.
 
-### Testes e Feedback
+## Testes e Feedback
 
-Testes de usabilidade são essenciais para garantir que nossas soluções atendam às necessidades da comunidade. Se você é um usuário interessado nesta aplicação sinta-se avontade para utilizar o projeto!😁
+Feedbacks e testes de usabilidade são fundamentais para aprimorar nossas soluções e garantir que atendam às necessidades da comunidade. Se você é um usuário interessado nesta aplicação, sinta-se à vontade para utilizá-la e nos fornecer seu feedback! 😁
 
-### Integrantes
+## Integrantes
+
 - Larissa Araújo Gama RM-96496
 - Luna Faustino Lima RM-552473
 - Murillo Ferreira RM-553315
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT) - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
