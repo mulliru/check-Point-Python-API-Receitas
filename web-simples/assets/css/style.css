@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: #AC6F90;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav .logo {
+    margin: 0;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.menu a:hover {
+    color: #ddd;
+}
+
+/* Estilos para o formulário */
+.forms {
+    padding: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.forms .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.form {
+    padding-right: 20px;
+}
+
+.form h2 {
+    margin-top: 0;
+}
+
+.form form {
+    text-align: left;
+}
+
+.forms label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.forms input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.forms button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forms button:hover {
+    background-color: #45a049;
+}
+
+
+
+.image-placeholder img {
+    max-width: 300px; 
+    height: auto; /* Manter a proporção da imagem */
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
