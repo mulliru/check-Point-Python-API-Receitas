@@ -3,43 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grandma's Cookbook</title>
-    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<nav>
-    <!-- Navegação -->
-    <div class="container">
-        <h1 class="logo">Grandma's Cookbook</h1>
-    </div>
-</nav>
+<form id="loginForm">
+    <h1>Formulário</h1>
+    <label for="username">Nome de Usuário:</label>
+    <input type="text" id="username" name="username" required>
+    <span></span>
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+    <span></span>
+    <button type="submit">Enviar</button>
+</form>
 
-<section class="forms">
-    <!-- Seção de Formulários -->
-    <div class="container">
-        <div class="form">
-            <!-- Formulário de Pesquisa -->
-            <h2>Pesquisar Receita</h2>
-            <form action="#" method="GET">
-                <label for="search">Pesquisar por nome:</label>
-                <input type="text" id="search" name="search" required>
-                <button type="submit">Pesquisar</button>
-            </form>
-        </div>
-        <div class="image-placeholder">
-            <!-- Espaço reservado para imagem -->
-            <img src="../static/img/Untitled.png" alt="Imagem de uma avó cozinhando">
-        </div>
-    </div>
-</section>
-
-<footer>
-    <!-- Rodapé -->
-    <div class="container">
-        <p>&copy; 2024 Grandma's Cookbook</p>
-    </div>
-</footer>
+<script src="assets/js/script.js" defer></script>
 
 </body>
 </html>
