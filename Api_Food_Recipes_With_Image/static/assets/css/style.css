@@ -1,113 +1,58 @@
-/* Estilos Globais */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Estilos da Navegação */
-nav {
-    background-color: #AC6F90;
-    color: #fff;
-    padding: 10px 0;
-}
-
-nav .logo {
-    margin: 0;
-}
-
-/* Estilos do Menu */
-.menu {
-    list-style-type: none;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
     display: flex;
-    text-align: right;
-    justify-content: right;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-.menu a:hover {
-    color: #ddd;
+h1 {
+    margin-bottom: 20px;
 }
 
-/* Estilos para o Formulário */
-.forms {
-    padding: 20px 0;
-    background-color: #f5f5f5;
-}
-
-.forms .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-}
-
-.form {
-    padding-right: 20px;
-}
-
-.form h2 {
-    margin-top: 0;
-}
-
-.form form {
-    text-align: left;
-}
-
-.forms label {
+label {
     display: block;
     margin-bottom: 10px;
 }
 
-.forms input[type="text"] {
+input {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-.forms button {
-    padding: 10px 20px;
+span {
+    color: red;
+    margin-bottom: 10px;
+}
+
+button {
     background-color: #AC6F90;
-    color: #fff;
+    color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.forms button:hover {
+button:hover {
     background-color: #AC6F90;
 }
 
-/* Estilos para a Imagem */
-.image-placeholder img {
-    max-width: 300px; 
-    height: auto; /* Manter a proporção da imagem */
-}
-
-/* Estilos para o Rodapé */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
+button:active {
+    background-color: #AC6F90;
 }
