@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (username === 'admin' && password === 'admin123') {
             //login adm
-            window.location.href = '../templates/busca.html';
+            window.location.href = '/busca';
         } else if (username === 'user' && password === 'user123') {
             //login de user
-            window.location.href = '../templates/busca.html';
+            window.location.href = '/busca';
         } else {
             var errorMessage = document.querySelector('span');
             errorMessage.textContent = 'Nome de usuário ou senha incorretos.';

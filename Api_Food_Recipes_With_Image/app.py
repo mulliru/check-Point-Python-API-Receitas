@@ -7,6 +7,7 @@ app = Flask(__name__)
 def  web_simple():
    
     return render_template('index.html')
+
 @app.route('/busca')
 def  web_simple_busca():
    
