@@ -31,12 +31,21 @@
             {% if recipes %}
                 {% for recipe in recipes %}
                 <div class="recipe">
-                    <h3>{{ recipe }}</h3>
+                    <h3>{{ recipe['Title'] }}</h3>
+                    <p><strong>Ingredientes: </strong></p>
+                    <ul>
+                        {% for key, value in recipe['Ingredients'].items() %}
+                            <li>{{ key }} : {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p><strong>Instruções:</strong></p>
+                    <p>{{ recipe['Instructions'] }}</p>
+                    <img src="{{ recipe['Image'] }}" alt="Imagem da receita">
                 </div>
                 {% endfor %}
             {% endif %}
         </div>
-        
+
         <div class="image-placeholder">
             <!-- Espaço reservado para imagem -->
             <img src="../static/img/grandma.png" alt="Imagem de uma avó cozinhando">

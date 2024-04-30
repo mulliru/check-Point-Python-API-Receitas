@@ -12,6 +12,7 @@ def  web_simple():
 @app.route('/busca', methods=['GET', 'POST'])
 def web_simple_busca():
     if request.method == 'POST':
+
         # obtendo a busca do html
         query = request.form['search']
         
@@ -33,21 +34,16 @@ def web_simple_busca():
         else:
             recipes = []
 
-        def format_recipe_info(recipe):
-            title = recipe['Title']
-            ingredients = recipe['Ingredients']
-            instructions = recipe['Instructions']
-            image = recipe['Image']
-            
-            formatted_info = f"Título: {title}\n\nIngredientes:\n"
-            for key, value in ingredients.items():
-                formatted_info += f"{key}. {value}\n"
-            
-            formatted_info += f"\nInstruções:\n{instructions}\n\nImagem: {image}\n\n---"
-            
-            return formatted_info
+        recipes_formatted = []
+        for recipe in recipes:
+            formatted_recipe = {
+                'Title' : recipe['Title'],
+                'Ingredients' : recipe['Ingredients'],
+                'Instructions' : recipe['Instructions'],
+                'Image' : recipe['Image']
+            }
+            recipes_formatted.append(formatted_recipe)
 
-        recipes_formatted = [format_recipe_info(recipe) for recipe in recipes]
 
         return render_template('busca.html', recipes=recipes_formatted)
     else:
