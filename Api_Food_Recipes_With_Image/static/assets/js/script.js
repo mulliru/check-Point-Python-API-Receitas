@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
 
-        
         if (username === 'admin' && password === 'admin123') {
+            //login adm
+            window.location.href = '../templates/busca.html';
+        } else if (username === 'user' && password === 'user123') {
+            //login de user
             window.location.href = '../templates/busca.html';
         } else {
-           
             var errorMessage = document.querySelector('span');
             errorMessage.textContent = 'Nome de usuário ou senha incorretos.';
         }
