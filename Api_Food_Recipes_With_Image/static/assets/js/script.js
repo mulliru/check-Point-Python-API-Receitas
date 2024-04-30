@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         if (username === 'admin' && password === 'admin123') {
-            window.location.href = 'corrigindo';
+            window.location.href = '../templates/busca.html';
         } else {
            
             var errorMessage = document.querySelector('span');
