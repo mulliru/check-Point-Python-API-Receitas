@@ -21,12 +21,22 @@
         <div class="form">
             <!-- Formulário de Pesquisa -->
             <h2>Pesquisar Receita</h2>
-            <form action="#" method="GET">
+            <form action="/busca" method="POST">
                 <label for="search">Pesquisar por nome:</label>
                 <input type="text" id="search" name="search" required>
                 <button type="submit">Pesquisar</button>
             </form>
         </div>
+        <div class="recipes">
+            {% if recipes %}
+                {% for recipe in recipes %}
+                <div class="recipe">
+                    <h3>{{ recipe }}</h3>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        
         <div class="image-placeholder">
             <!-- Espaço reservado para imagem -->
             <img src="../static/img/grandma.png" alt="Imagem de uma avó cozinhando">
