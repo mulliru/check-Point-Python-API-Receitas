@@ -115,8 +115,27 @@ footer {
 /* Estilos para os Detalhes da Receita */
 .details {
     display: none;
+
+
 }
 
 .details:not(.hidden) {
     display: block;
 }
+
+/* formatação para as receitas quando clicadas */
+
+.recipes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    padding: 20px; 
+    
+  }
+
+  .recipe {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
