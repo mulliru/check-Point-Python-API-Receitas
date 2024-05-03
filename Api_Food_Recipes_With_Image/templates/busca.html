@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grandma's Cookbook</title>
     <link rel="stylesheet" href="../static/assets/css/busca.css">
+    <script src="../static/assets/js/busca.js" defer></script>
 </head>
 <body>
 
@@ -32,14 +33,16 @@
                 {% for recipe in recipes %}
                 <div class="recipe">
                     <h3>{{ recipe['Title'] }}</h3>
-                    <p><strong>Ingredientes: </strong></p>
-                    <ul>
-                        {% for key, value in recipe['Ingredients'].items() %}
-                            <li>{{ key }} : {{ value }}</li>
-                        {% endfor %}
-                    </ul>
-                    <p><strong>Instruções:</strong></p>
-                    <p>{{ recipe['Instructions'] }}</p>
+                    <div class="details hidden">
+                        <p><strong>Ingredientes: </strong></p>
+                        <ul>
+                            {% for key, value in recipe['Ingredients'].items() %}
+                                <li>{{ key }} : {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p><strong>Instruções:</strong></p>
+                        <p>{{ recipe['Instructions'] }}</p>
+                    </div>
                     <img src="{{ recipe['Image'] }}" alt="Imagem da receita">
                 </div>
                 {% endfor %}
