@@ -1,0 +1,16 @@
+para instalar o flask:
+1. Abra o terminal
+2. pip install flask
+
+para instalar o requests
+1. Abra o terminal
+2. pip install requests
+
+Para conseguir a chave da api
+1. abra o site https://rapidapi.com/zilinskivan/api/food-recipes-with-images/
+2. Faça login com a sua conta
+3. copie a chave da api "X-RapidAPI-Key"
+
+Para rodas o arquivo app.py 
+1. crie um arquivo key.py com o seguinte codigo: api_key = "chave da sua api"
+2. rode o codigo 
