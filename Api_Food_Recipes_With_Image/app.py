@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from key import api_key
 import requests
 
 
@@ -22,7 +23,7 @@ def web_simple_busca():
 
         # headers
         headers = {
-            "X-RapidAPI-Key": "ea262b61c3msh5f9d62d6beadb81p1efeb9jsne5e93e8bdc7a",
+            "X-RapidAPI-Key": api_key,
             "X-RapidAPI-Host": "food-recipes-with-images.p.rapidapi.com"
         }
 
