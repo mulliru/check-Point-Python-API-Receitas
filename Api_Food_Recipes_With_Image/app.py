@@ -42,10 +42,12 @@ def web_simple_busca():
 
         recipes_formatted = []
         for recipe in recipes:
+            
             formatted_recipe = {
-                'Title' : recipe['Title'],
+                'Title' : translator.translate(recipe['Title'], dest='pt').text,
+                #'Ingredients' : translator.translate(recipe['Ingredients'], dest='pt').text,
                 'Ingredients' : recipe['Ingredients'],
-                'Instructions' : recipe['Instructions'],
+                'Instructions' : translator.translate(recipe['Instructions'], dest='pt').text,
                 'Image' : recipe['Image']
             }
             recipes_formatted.append(formatted_recipe)
