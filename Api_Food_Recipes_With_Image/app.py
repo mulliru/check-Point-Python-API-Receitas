@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from key import api_key
 import requests
+from googletrans import Translator
 
 
 app = Flask(__name__)
@@ -12,10 +13,14 @@ def  web_simple():
 
 @app.route('/busca', methods=['GET', 'POST'])
 def web_simple_busca():
+    translator = Translator()
     if request.method == 'POST':
 
         # obtendo a busca do html
-        query = request.form['search']
+        query_pt = request.form['search']
+        query_en = translator.translate(query_pt, dest='en')
+        query = query_en.text
+        
         
         # url e o input
         url = "https://food-recipes-with-images.p.rapidapi.com/"
