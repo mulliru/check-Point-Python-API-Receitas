@@ -14,3 +14,4 @@ Para conseguir a chave da api
 Para rodas o arquivo app.py 
 1. crie um arquivo key.py com o seguinte codigo: api_key = "chave da sua api"
 2. rode o codigo 
+

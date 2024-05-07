@@ -6,7 +6,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
 }
 
 .container {
@@ -32,15 +31,14 @@ nav .logo {
     margin: 0;
     padding: 0;
     display: flex;
-    text-align: right;
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .menu a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .menu a:hover {
@@ -55,9 +53,8 @@ nav .logo {
 
 .forms .container {
     display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
 .form {
@@ -65,11 +62,7 @@ nav .logo {
 }
 
 .form h2 {
-    margin-top: 0;
-}
-
-.form form {
-    text-align: left;
+    margin: 0;
 }
 
 .forms label {
@@ -99,8 +92,8 @@ nav .logo {
 
 /* Estilos para a Imagem */
 .image-placeholder img {
-    max-width: 300px; 
-    height: auto; /* Manter a proporção da imagem */
+    max-width: 100%; 
+    height: auto;
 }
 
 /* Estilos para o Rodapé */
@@ -114,28 +107,62 @@ footer {
 
 /* Estilos para os Detalhes da Receita */
 .details {
-    display: none;
-
-
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100; /* Ajustado para garantir que os detalhes estejam acima das outras receitas */
 }
 
-.details:not(.hidden) {
-    display: block;
+.recipe:hover .details {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/* formatação para as receitas quando clicadas */
+.details button.print-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #AC6F90;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
+.details button.print-button:hover {
+    background-color: #934e73;
+}
+
+
+/* Estilos para as Receitas */
 .recipes {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
     padding: 20px; 
-    
-  }
+}
 
-  .recipe {
-    background-color: #f0f0f0;
+.recipe {
+    position: relative;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.recipe:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos para ocultar elementos */
+.hidden {
+    display: none;
+}
