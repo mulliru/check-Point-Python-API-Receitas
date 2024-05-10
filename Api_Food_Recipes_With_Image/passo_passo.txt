@@ -10,6 +10,8 @@ para instalar o tradutor
 1. Abra o terminal
 2. pip install googletrans==4.0.0-rc1
 
+ou 
+pip install -r requirements.txt
 
 Para conseguir a chave da api
 1. abra o site https://rapidapi.com/zilinskivan/api/food-recipes-with-images/
