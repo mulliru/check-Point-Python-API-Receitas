@@ -42,11 +42,13 @@ def web_simple_busca():
 
         recipes_formatted = []
         for recipe in recipes:
+            translated_ingredients = recipe['Ingredients']
+            for index in recipe['Ingredients'].keys():                
+                translated_ingredients[index] = translator.translate(recipe['Ingredients'][index], dest='pt').text
             
             formatted_recipe = {
-                'Title' : translator.translate(recipe['Title'], dest='pt').text,
-                #'Ingredients' : translator.translate(recipe['Ingredients'], dest='pt').text,
-                'Ingredients' : recipe['Ingredients'],
+                'Title' : translator.translate(recipe['Title'], dest='pt').text,                
+                'Ingredients' : translated_ingredients,
                 'Instructions' : translator.translate(recipe['Instructions'], dest='pt').text,
                 'Image' : recipe['Image']
             }
