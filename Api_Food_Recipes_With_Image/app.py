@@ -1,17 +1,15 @@
 from flask import Flask, render_template, request
-from key import api_key
+from key import api_key, USER, PASS
 import requests
 from googletrans import Translator
+import oracledb
 
+dsn = oracledb.makedsn('oracle.fiap.com.br', 1521, service_name='ORCL')
+connection = oracledb.connect(user=USER, password=PASS, dsn=dsn)
 
 app = Flask(__name__)
 
-@app.route('/')
-def  web_simple():
-   
-    return render_template('index.html')
-
-@app.route('/busca', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def web_simple_busca():
     recipe_limit = 5
     recipe_count = 0 
