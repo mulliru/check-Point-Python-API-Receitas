@@ -13,6 +13,8 @@ def  web_simple():
 
 @app.route('/busca', methods=['GET', 'POST'])
 def web_simple_busca():
+    recipe_limit = 5
+    recipe_count = 0 
     translator = Translator()
     if request.method == 'POST':
 
@@ -40,7 +42,7 @@ def web_simple_busca():
         else:
             recipes = []
 
-        recipes_formatted = []
+        recipes_formatted = []            
         for recipe in recipes:
             translated_ingredients = recipe['Ingredients']
             for index in recipe['Ingredients'].keys():                
@@ -53,6 +55,9 @@ def web_simple_busca():
                 'Image' : recipe['Image']
             }
             recipes_formatted.append(formatted_recipe)
+            recipe_count += 1
+            if recipe_count >= recipe_limit:
+                break
 
 
         return render_template('busca.html', recipes=recipes_formatted)
