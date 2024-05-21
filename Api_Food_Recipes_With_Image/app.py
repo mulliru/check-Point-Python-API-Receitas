@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
-from key import api_key
+from key import api_key, USER, PASS 
 import requests
 from googletrans import Translator
-
+import oracledb
 
 dsn = oracledb.makedsn('oracle.fiap.com.br', 1521, service_name='ORCL')
 connection = oracledb.connect(user=USER, password=PASS, dsn=dsn)
@@ -22,7 +22,7 @@ def web_simple_busca():
         #salvando a busca no Banco de dados
         cursor = connection.cursor()
         try:
-            sql = "INSERT INTO T_API_RECEITAS(cod_pesquisa, nm_pesquisado) VALUES(SEQ_API_RECEITAS.currval, :1)"
+            sql = "INSERT INTO T_API_RECEITAS(cod_pesquisa, nm_pesquisado) VALUES(SEQ_API_RECEITAS.nextval, :1)"
             cursor.execute(sql, [query_pt])
             connection.commit()
         except oracledb.DatabaseError as e:
