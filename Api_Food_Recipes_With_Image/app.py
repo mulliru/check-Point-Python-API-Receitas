@@ -1,19 +1,14 @@
 from flask import Flask, render_template, request
-from key import api_key, USER, PASS
+from key import api_key
 import requests
 from googletrans import Translator
-import oracledb
-
-dsn = oracledb.makedsn('oracle.fiap.com.br', 1521, service_name='ORCL')
-connection = oracledb.connect(user=USER, password=PASS, dsn=dsn)
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def web_simple_busca():
-    recipe_limit = 5
-    recipe_count = 0 
     translator = Translator()
+
     if request.method == 'POST':
         # obtendo a busca do html
         query_pt = request.form['search']
@@ -34,7 +29,7 @@ def web_simple_busca():
         response = requests.get(url, headers=headers, params=querystring)
 
         if response.status_code == 200:
-            recipes = response.json()['d']
+            recipes = response.json()['d'][:3]
         else:
             recipes = []
 
@@ -52,13 +47,10 @@ def web_simple_busca():
                 'Image': recipe['Image']
             }
             recipes_formatted.append(formatted_recipe)
-            recipe_count += 1
-            if recipe_count >= recipe_limit:
-                break
 
         return render_template('busca.html', recipes=recipes_formatted)
     else:
         return render_template('busca.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
