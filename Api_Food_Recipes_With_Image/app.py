@@ -1,21 +1,15 @@
 from flask import Flask, render_template, request
-from key import api_key, USER, PASS
+from key import api_key
 import requests
 from googletrans import Translator
-import oracledb
-
-dsn = oracledb.makedsn('oracle.fiap.com.br', 1521, service_name='ORCL')
-connection = oracledb.connect(user=USER, password=PASS, dsn=dsn)
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def web_simple_busca():
-    recipe_limit = 5
-    recipe_count = 0 
     translator = Translator()
-    if request.method == 'POST':
 
+    if request.method == 'POST':
         # obtendo a busca do html
         query_pt = request.form['search']
         query_en = translator.translate(query_pt, dest='en')
@@ -48,33 +42,28 @@ def web_simple_busca():
         response = requests.get(url, headers=headers, params=querystring)
 
         if response.status_code == 200:
-            recipes = response.json()['d']
+            recipes = response.json()['d'][:3]
         else:
             recipes = []
 
-        recipes_formatted = []            
+        recipes_formatted = []
         for recipe in recipes:
-            translated_ingredients = recipe['Ingredients']
-            for index in recipe['Ingredients'].keys():                
-                translated_ingredients[index] = translator.translate(recipe['Ingredients'][index], dest='pt').text
+            translated_ingredients = []
+            for ingredient in recipe['Ingredients'].values():
+                translated_ingredient = translator.translate(ingredient, dest='pt').text
+                translated_ingredients.append(translated_ingredient)
             
             formatted_recipe = {
-                'Title' : translator.translate(recipe['Title'], dest='pt').text,                
-                'Ingredients' : translated_ingredients,
-                'Instructions' : translator.translate(recipe['Instructions'], dest='pt').text,
-                'Image' : recipe['Image']
+                'Title': translator.translate(recipe['Title'], dest='pt').text,
+                'Ingredients': translated_ingredients,
+                'Instructions': translator.translate(recipe['Instructions'], dest='pt').text,
+                'Image': recipe['Image']
             }
             recipes_formatted.append(formatted_recipe)
-            recipe_count += 1
-            if recipe_count >= recipe_limit:
-                break
-
 
         return render_template('busca.html', recipes=recipes_formatted)
     else:
         return render_template('busca.html')
-
-
 
 if __name__ == '__main__':
     app.run()

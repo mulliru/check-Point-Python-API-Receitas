@@ -36,8 +36,8 @@
                     <div class="details hidden">
                         <p><strong>Ingredientes: </strong></p>
                         <ul>
-                            {% for key, value in recipe['Ingredients'].items() %}
-                                <li>{{ key }} : {{ value }}</li>
+                            {% for ingredient in recipe['Ingredients'] %}
+                                <li>{{ ingredient }}</li>
                             {% endfor %}
                         </ul>
                         <p><strong>Instruções:</strong></p>
