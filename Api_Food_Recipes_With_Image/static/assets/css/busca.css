@@ -15,7 +15,6 @@
 body {
   font-family: var(--font-family);
   margin: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -115,13 +114,14 @@ footer {
   color: var(--text-color);
   text-align: center;
   padding: 20px 0;
-  margin-top: auto;
+
+  
 }
 
 /* Estilos para os Detalhes da Receita */
 .details {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px); /* Posição dos detalhes abaixo da receita */
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -129,26 +129,13 @@ footer {
   opacity: 0;
   pointer-events: none;
   z-index: 100;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .recipe:hover .details {
   opacity: 1;
   pointer-events: auto;
-}
-
-.details button.print-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color var(--transition-duration);
-}
-
-.details button.print-button:hover {
-  background-color: var(--secondary-color);
 }
 
 /* Estilos para as Receitas */
@@ -157,10 +144,10 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  position: relative; /* Adicionando posição relativa */
 }
 
 .recipe {
-  position: relative;
   background-color: #fff;
   padding: 20px;
   border-radius: var(--border-radius);
