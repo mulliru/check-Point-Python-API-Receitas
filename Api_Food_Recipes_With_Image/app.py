@@ -29,24 +29,8 @@ def web_simple_busca():
             error, = e.args
             print(f"An error occurred: {error.code} - {error.message}")
         finally:
-            cursor.close()
-
-
+            cursor.close()        
         
-        
-        #salvando a busca no Banco de dados
-        cursor = connection.cursor()
-        try:
-            sql = "INSERT INTO T_API_RECEITAS(cod_pesquisa, nm_pesquisado) VALUES(SEQ_API_RECEITAS.currval, :1)"
-            cursor.execute(sql, [query_pt])
-            connection.commit()
-        except oracledb.DatabaseError as e:
-            error, = e.args
-            print(f"An error occurred: {error.code} - {error.message}")
-        finally:
-            cursor.close()
-
-
         # url e o input
         url = "https://food-recipes-with-images.p.rapidapi.com/"
         querystring = {"q": query}
