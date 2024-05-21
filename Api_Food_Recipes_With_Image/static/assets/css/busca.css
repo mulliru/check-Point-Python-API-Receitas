@@ -1,159 +1,195 @@
-
+/* Variáveis CSS */
+:root {
+  --primary-color: #AC6F90;
+  --secondary-color: #934e73;
+  --background-color: #f5f5f5;
+  --text-color: #fff;
+  --font-family: Arial, sans-serif;
+  --transition-duration: 0.3s;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 4px;
+  --container-max-width: 1200px;
+}
 
 /* Estilos Globais */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Estilos da Navegação */
-  nav {
-    background-color: #AC6F90;
-    color: #fff;
-    padding: 10px 0;
-  }
-  
-  nav .logo {
-    margin: 0;
-  }
-  
-  /* Estilos do Menu */
-  .menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    margin-left: 20px;
-  }
-  
-  .menu a:hover {
-    color: #ddd;
-  }
-  
-  /* Estilos para o Formulário */
-  .forms {
-    padding: 20px 0;
-    background-color: #f5f5f5;
-  }
-  
-  .forms .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .form {
-    padding-right: 20px;
-  }
-  
-  .form h2 {
-    margin: 0;
-  }
-  
-  .forms label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .forms input[type="text"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .forms button {
-    padding: 10px 20px;
-    background-color: #AC6F90;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .forms button:hover {
-    background-color: #AC6F90;
-  }
-  
-  /* Estilos para a Imagem */
-  .image-placeholder img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Estilos para o Rodapé */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-  }
-  
-  /* Estilos para os Detalhes da Receita */
-  .details {
-    position: absolute;
-    top: calc(100% + 20px); /* Nova linha abaixo do grid */
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 100;
-  }
-  
-  .recipe:hover .details {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  .details button.print-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #AC6F90;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .details button.print-button:hover {
-    background-color: #934e73;
-  }
-  
-  /* Estilos para as Receitas */
+  font-family: var(--font-family);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos da Navegação */
+nav {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 0;
+}
+
+nav .logo {
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: color var(--transition-duration);
+}
+
+.menu a:hover {
+  color: #ddd;
+}
+
+/* Estilos para o Formulário */
+.forms {
+  padding: 20px 0;
+  background-color: var(--background-color);
+}
+
+.forms .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  padding-right: 20px;
+}
+
+.form h2 {
+  margin: 0;
+}
+
+.forms label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.forms input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+}
+
+.forms button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.forms button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Estilos para a Imagem */
+.image-placeholder img {
+  max-width: 100%; 
+  height: auto;
+}
+
+/* Estilos para o Rodapé */
+footer {
+  background-color: #333;
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+/* Estilos para os Detalhes da Receita */
+.details {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: opacity var(--transition-duration);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.recipe:hover .details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.details button.print-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.details button.print-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Estilos para as Receitas */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.recipe {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-duration);
+}
+
+.recipe:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos para ocultar elementos */
+.hidden {
+  display: none;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
   .recipes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ajustar o número de colunas se necessário */
-    gap: 20px;
-    padding: 20px;
+      grid-template-columns: 1fr;
   }
-  
-  .recipe {
-    position: absolute;
-    background-color: rgb(229, 243, 243);
 
-
+  .menu {
+      flex-direction: column;
+      align-items: flex-end;
   }
-  
+
+  .menu a {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+}
