@@ -30,16 +30,19 @@
         </div>
         <div class="recipes">
             {% if recipes %}
+            <script>
+                var result = 1;
+            </script>
                 {% for recipe in recipes %}
                 <div class="recipe">
                     <h3>{{ recipe['Title'] }}</h3>
                     <div class="details hidden">
                         <p><strong>Ingredientes: </strong></p>
-                        <ul>
+                        <link>
                             {% for ingredient in recipe['Ingredients'] %}
                                 <li>{{ ingredient }}</li>
                             {% endfor %}
-                        </ul>
+                        </link>
                         <p><strong>Instruções:</strong></p>
                         <p>{{ recipe['Instructions'] }}</p>
                     </div>
@@ -48,11 +51,14 @@
                 {% endfor %}
             {% endif %}
         </div>
-
-        <div class="image-placeholder">
-            <!-- Espaço reservado para imagem -->
-            <img src="../static/img/grandma.png" alt="Imagem de uma avó cozinhando">
-        </div>
+        <div id="result"></div>
+        <script>
+            if(result == 0){
+                exibir = document.getElementById('result');
+                exibir.innerHTML = "<div class=\"image-placeholder\" ><!-- Espaço reservado para imagem --><img src=\"../static/img/grandma.png\" alt=\"Imagem de uma avó cozinhando\"></div>";
+            }
+        </script>
+        
     </div>
 </section>
 
